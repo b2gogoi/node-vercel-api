@@ -7,5 +7,11 @@ export default function handler(req, res) {
         { id: 3, name: 'Bhaskar'}
     ];
     res.setHeader('Access-Control-Allow-Origin', '*')
-    res.status(200).json(users);
+    res.status(200).json({
+        users,
+        todo: {
+            key: 'TODO',
+            value: process.env.TODO
+        }
+    });
 }
